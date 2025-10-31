@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Sizing & Recommendation Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calculator-card">
+        
+        <div class="calculator-inputs">
+            <h1>AC Sizing & Recommendation Tool ❄️</h1>
+            <p class="subtitle">Find the perfect AC size for your room.</p>
+            
+            <div class="input-group">
+                <label for="length">Room Length (feet)</label>
+                <input type="number" id="length" placeholder="e.g., 14">
+            </div>
+
+            <div class="input-group">
+                <label for="width">Room Width (feet)</label>
+                <input type="number" id="width" placeholder="e.g., 12">
+            </div>
+
+            <div class="input-group">
+                <label for="sunlight">Sunlight Exposure</label>
+                <select id="sunlight">
+                    <option value="0.9">Mostly Shady</option>
+                    <option value="1.0" selected>Normal</option>
+                    <option value="1.1">Mostly Sunny</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="people">Number of People (Usually)</label>
+                <input type="number" id="people" value="2" min="1">
+            </div>
+
+            <button id="calculate-btn">Calculate</button>
+        </div>
+
+        <div class="calculator-results">
+            <div id="result-container" class="hidden">
+                <h2>Recommended AC Size:</h2>
+                <p id="result-text">1.5 Ton</p>
+            </div>
+
+            <div id="recommendations-container" class="hidden">
+                <h3>Recommended AC Models</h3>
+                <p class="subtitle">Here are some new models that match your room's tonnage.</p>
+                <div id="recommendations-list">
+                    </div>
+            </div>
+
+            <div class="diy-section">
+                <h3>Building Your Own Controller?</h3>
+                <p class="subtitle">Get our open-source hardware to repair or upgrade an AC!</p>
+                <div class="resource-buttons">
+                    <a href="#" class="resource-btn">Get PCB & Schematic Files</a>
+                    <a href="#" class="resource-btn">View Required Components</a>
+                    <a href="#" class="resource-btn">Follow the Assembly Guide</a>
+                </div>
+            </div>
+        </div> </div> <script src="script.js"></script>
+</body>
+</html>
