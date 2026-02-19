@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Universal AC Control Board - User Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+
+        header {
+            background-color: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .accordion {
+            background-color: white;
+            color: #111827;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            margin-top: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .accordion:hover {
+            background-color: #e5e7eb;
+        }
+
+        .panel {
+            padding: 0 15px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .panel ul {
+            line-height: 1.7;
+        }
+
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111827;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Universal Configurable AC Control Board</h1>
+    <p>User Guide (Draft Version) </p>
+</header>
+
+<div class="container">
+
+    <button class="accordion">1. Project Overview</button>
+    <div class="panel">
+        <p>
+            This open-source AC control board is designed to replace damaged
+            non-inverter AC PCBs and add WiFi-based smart features.
+        </p>
+    </div>
+
+    <button class="accordion">2. System Architecture</button>
+    <div class="panel">
+        <ul>
+            <li><strong>Control Layer:</strong> ESP32</li>
+            <li><strong>Power Switching Layer:</strong> Relay & SSR</li>
+            <li><strong>User Interface:</strong> Web Dashboard & Display</li>
+        </ul>
+<img src="architecture.png" alt="System Architecture" style="max-width:500px; width:100%; height:auto; display:block; margin:auto;">    </div>
+
+    <button class="accordion">3. Hardware Requirements (Draft BOM)</button>
+    <div class="panel">
+        <h4>Control Section</h4>
+        <ul>
+            <li>ESP32 Development Board</li>
+            <li>Display Module</li>
+            <li>IR Receiver (Planned)</li>
+            <li>Buzzer (Optional)</li>
+        </ul>
+
+        <h4>Power Switching Section</h4>
+        <ul>
+            <li>5V Relay Module (Compressor)</li>
+            <li>AC-rated SSR (Blower – Pending)</li>
+        </ul>
+
+        <h4>Power Supply Section</h4>
+        <ul>
+            <li>230V AC to 5V SMPS Module</li>
+            <li>3.3V Regulation for ESP32</li>
+        </ul>
+    </div>
+
+    <button class="accordion">4. Electrical Safety & Isolation</button>
+    <div class="panel">
+        <p class="warning">
+            WARNING: System interfaces with AC mains voltage.
+        </p>
+        <ul>
+            <li>Disconnect power before wiring.</li>
+            <li>Ensure relay rating matches compressor load.</li>
+            <li>Maintain isolation between high and low voltage sections.</li>
+            <li>Use protective enclosure.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">5. Installation Procedure</button>
+    <div class="panel">
+        <ul>
+            <li>Turn OFF AC mains.</li>
+            <li>Identify compressor control line.</li>
+            <li>Connect relay COM and NO.</li>
+            <li>Power on ESP32 and test via web dashboard.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">6. Firmware & WiFi Setup</button>
+    <div class="panel">
+        <ul>
+            <li>Upload firmware to ESP32.</li>
+            <li>Configure WiFi credentials.</li>
+            <li>Access device IP address in browser.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">7. Web Dashboard Usage</button>
+    <div class="panel">
+        <ul>
+            <li>Toggle Compressor ON/OFF</li>
+            <li>Adjust Temperature</li>
+            <li>View Status on Display</li>
+        </ul>
+    </div>
+
+    <button class="accordion">8. Future Enhancements</button>
+    <div class="panel">
+        <ul>
+            <li>Blower Speed Integration</li>
+            <li>IR Remote Mapping</li>
+            <li>PCB Version 1.0 Release</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Universal AC Control Board Project
+</footer>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
